@@ -1,0 +1,115 @@
+body {
+	background-color: #212121;
+	color: #ECEFF7;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+input[type="text"] {
+	margin: 4vh 4vw;
+	border-radius: 15px;
+	border: 1px solid black;
+	padding: 5px; 
+	width: 90vw;
+	font-size: calc(12px + (20 - 12) * ((100vw - 200px) / (1920 - 400)));
+}
+
+input[type="text"]:focus {
+	outline: none;
+}
+
+table {
+  font-size: calc(12px + (20 - 12) * ((100vw - 200px) / (1920 - 200)));
+  text-align: center;
+	width: 90vw;
+	border-collapse: collapse;
+}
+
+th {
+	font-size: calc(13px + (21 - 13) * ((100vw - 200px) / (1920 - 200)));
+	border-bottom: 1px solid #ECEFF7;
+	background-color: #424242;
+	cursor: pointer;
+}
+
+th:not(:last-child), td:not(:last-child) {
+	border-right: 1px solid #ECEFF7;
+}
+
+tr:not(:last-child)  {
+	border-bottom: 1px solid #ECEFF7;
+}
+
+tr:nth-child(even) {
+	background-color: #424242;
+}
+
+th, td {
+	padding: 1vh 0;
+}
+
+.th-sort-asc::after {
+  content: "\25b4";
+}
+
+.th-sort-desc::after {
+  content: "\25be";
+}
+
+.th-sort-asc::after, .th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.error {
+	display: none;
+	align-items: center;
+	color: #d50000;
+	font-size: calc(8px + (20 - 8) * ((100vw - 200px) / (1920 - 200)));
+	height: 90vh;	
+}
+
+@media  (max-width: 400px)  {
+
+	input[type="text"] {
+		font-size: calc(10px + (16 - 10) * ((100vw - 200px) / (400 - 200)));
+	 }
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+    font-size: calc(10px + (16 - 10) * ((100vw - 200px) / (400 - 200)));
+	}
+
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	td { 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+    position: absolute;
+		left: 6px;
+		width: 40%; 
+	}
+	
+	td:nth-of-type(1):before { 
+		content: "Id"; 
+  }
+
+	td:nth-of-type(2):before { 
+		content: "Tytuł"; 
+  }
+
+	td:nth-of-type(3):before { 
+		content: "Liczba stron"; 
+  }
+
+	td:nth-of-type(4):before {
+		content: "Data wydania"; 
+	}
+}
